@@ -4,7 +4,7 @@ namespace MiracSEBTask.Repositories
 {
     public interface ICustomerRepository
     {
-        Customer GetCustomer(int id);
+        Customer GetCustomer(Guid id);
         IEnumerable<Customer> GetCustomers();
     }
 }

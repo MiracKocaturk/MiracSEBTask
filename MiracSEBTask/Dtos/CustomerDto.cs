@@ -2,7 +2,7 @@
 {
     public record CustomerDto
     {
-        public int Id { get; init; }
+        public Guid Id { get; init; }
         public string SocialSecurityNumber { get; init; }
 
         public string? EmailAddress { get; init; }

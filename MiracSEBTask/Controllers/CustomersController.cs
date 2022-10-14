@@ -33,7 +33,7 @@ namespace MiracSEBTask.Controllers
 
         //GET /customers/{id}
         [HttpGet("{id}")]
-        public ActionResult<CustomerDto> GetCustomer(int id)
+        public ActionResult<CustomerDto> GetCustomer(Guid id)
         {
             var customer = customerRepository.GetCustomer(id);
             
