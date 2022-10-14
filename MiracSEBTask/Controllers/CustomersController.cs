@@ -11,10 +11,10 @@ namespace MiracSEBTask.Controllers
     [Route("customers")]
     public class CustomersController : ControllerBase
     {
-        private readonly  CustomerRepository customerRepository;
-        public CustomersController()
+        private readonly  ICustomerRepository customerRepository;
+        public CustomersController(ICustomerRepository customerRepository)
         {
-            customerRepository = new CustomerRepository();
+            this.customerRepository = customerRepository;
         }
 
         // GET /customers

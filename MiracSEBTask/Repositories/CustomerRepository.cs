@@ -4,7 +4,7 @@ using System.Net.Mail;
 
 namespace MiracSEBTask.Repositories
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private readonly List<Customer> customers = new List<Customer>()
         {
