@@ -8,5 +8,7 @@ namespace MiracSEBTask.Repositories
         IEnumerable<Customer> GetCustomers();
 
         void CreateCustomer(Customer customer);
+        void UpdateCustomer(Customer customer);
+        void DeleteCustomer(Guid id);
     }
 }

@@ -75,5 +75,40 @@ namespace MiracSEBTask.Controllers
             });
         }
 
+        //PUT /customers/id
+        [HttpPut("id")]
+        public ActionResult UpdateCustomer (Guid id,UpdateCustomerDto customerDto)
+        {
+            var existingCustomer = customerRepository.GetCustomer(id);
+
+            if (existingCustomer is null)
+            {
+                return NotFound();
+            }
+            Customer updatedCustomer = new Customer()
+            {
+                Id = id,
+                SocialSecurityNumber = customerDto.SocialSecurityNumber,
+                EmailAddress = customerDto.EmailAddress,
+                PhoneNumber = customerDto.PhoneNumber
+            };
+            customerRepository.UpdateCustomer(updatedCustomer);
+            return NoContent();
+        }
+
+        //DELETE /items/{id}
+        [HttpDelete("id")]
+        public ActionResult DeleteCustomer (Guid id)
+        {
+            var existingCustomer = customerRepository.GetCustomer(id);
+
+            if (existingCustomer is null)
+            {
+                return NotFound();
+            }
+            customerRepository.DeleteCustomer(id);
+            return NoContent();
+        }
+
     }
 }

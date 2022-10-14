@@ -1,4 +1,5 @@
-﻿using MiracSEBTask.Models;
+﻿using Microsoft.AspNetCore.Http.Features;
+using MiracSEBTask.Models;
 using System.Linq;
 using System.Net.Mail;
 
@@ -26,6 +27,19 @@ namespace MiracSEBTask.Repositories
         public void CreateCustomer(Customer customer)
         {
             customers.Add(customer);
+        }
+
+        public void UpdateCustomer(Customer customer)
+        {
+            var index=customers.FindIndex(existing => existing.Id==customer.Id);
+            customers[index] = customer;
+        }
+
+        public void DeleteCustomer(Guid id)
+        {
+            var index = customers.FindIndex(existing => existing.Id == id);
+            customers.RemoveAt(index);
+
         }
     }
 }
