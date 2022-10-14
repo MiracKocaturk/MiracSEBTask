@@ -26,7 +26,8 @@ namespace MiracSEBTask.Controllers
             { 
                 Id =customer.Id,
                 SocialSecurityNumber=customer.SocialSecurityNumber,
-                PhoneNumber=customer.PhoneNumber
+                EmailAddress = customer.EmailAddress,
+                PhoneNumber =customer.PhoneNumber
             });
             return Ok(customers);
         }
@@ -45,9 +46,34 @@ namespace MiracSEBTask.Controllers
             {
                 Id = customer.Id,
                 SocialSecurityNumber = customer.SocialSecurityNumber,
+                EmailAddress = customer.EmailAddress,
                 PhoneNumber = customer.PhoneNumber
             };
             return Ok(customerDto);
         }
+
+        //POST /customers/
+        [HttpPost]
+        public ActionResult<RetrieveCustomerDto> CreateCustomer(CreateCustomerDto customerDto)
+        {
+            Customer customer = new Customer()
+            {
+                Id = Guid.NewGuid(),
+                SocialSecurityNumber = customerDto.SocialSecurityNumber,
+                EmailAddress = customerDto.EmailAddress,
+                PhoneNumber = customerDto.PhoneNumber
+            };
+
+            customerRepository.CreateCustomer(customer);
+
+            return CreatedAtAction(nameof(GetCustomer), new { id = customer.Id }, new RetrieveCustomerDto
+            {
+                Id = customer.Id,
+                SocialSecurityNumber = customer.SocialSecurityNumber,
+                EmailAddress = customer.EmailAddress,
+                PhoneNumber = customer.PhoneNumber
+            });
+        }
+
     }
 }

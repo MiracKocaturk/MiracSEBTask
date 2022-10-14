@@ -6,5 +6,7 @@ namespace MiracSEBTask.Repositories
     {
         Customer GetCustomer(Guid id);
         IEnumerable<Customer> GetCustomers();
+
+        void CreateCustomer(Customer customer);
     }
 }
