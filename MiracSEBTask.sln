@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiracSEBTask", "MiracSEBTask\MiracSEBTask.csproj", "{15B3A3C4-EEC8-4EA4-ABAF-D8BA8327428A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiracSEBTask.UnitTests", "MiracSEBTask.UnitTests\MiracSEBTask.UnitTests.csproj", "{FB246B99-B109-43F1-8834-086F65DDBE24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{15B3A3C4-EEC8-4EA4-ABAF-D8BA8327428A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15B3A3C4-EEC8-4EA4-ABAF-D8BA8327428A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15B3A3C4-EEC8-4EA4-ABAF-D8BA8327428A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB246B99-B109-43F1-8834-086F65DDBE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB246B99-B109-43F1-8834-086F65DDBE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB246B99-B109-43F1-8834-086F65DDBE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB246B99-B109-43F1-8834-086F65DDBE24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
