@@ -1,6 +1,6 @@
 ﻿namespace MiracSEBTask.Dtos
 {
-    public record CustomerDto
+    public record RetrieveCustomerDto
     {
         public Guid Id { get; init; }
         public string SocialSecurityNumber { get; init; }

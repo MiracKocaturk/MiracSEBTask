@@ -20,9 +20,9 @@ namespace MiracSEBTask.Controllers
 
         // GET /customers
         [HttpGet]
-        public ActionResult<IEnumerable<CustomerDto>> GetCustomers()
+        public ActionResult<IEnumerable<RetrieveCustomerDto>> GetCustomers()
         {
-            var customers = customerRepository.GetCustomers().Select(customer => new CustomerDto
+            var customers = customerRepository.GetCustomers().Select(customer => new RetrieveCustomerDto
             { 
                 Id =customer.Id,
                 SocialSecurityNumber=customer.SocialSecurityNumber,
@@ -33,7 +33,7 @@ namespace MiracSEBTask.Controllers
 
         //GET /customers/{id}
         [HttpGet("{id}")]
-        public ActionResult<CustomerDto> GetCustomer(Guid id)
+        public ActionResult<RetrieveCustomerDto> GetCustomer(Guid id)
         {
             var customer = customerRepository.GetCustomer(id);
             
@@ -41,7 +41,7 @@ namespace MiracSEBTask.Controllers
             {
                 return NotFound();
             }
-            CustomerDto customerDto = new()
+            RetrieveCustomerDto customerDto = new()
             {
                 Id = customer.Id,
                 SocialSecurityNumber = customer.SocialSecurityNumber,
