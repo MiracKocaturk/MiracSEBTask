@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MiracSEBTask.Actions;
 using MiracSEBTask.Dtos;
 using MiracSEBTask.Models;
 using MiracSEBTask.Repositories;
@@ -56,6 +57,10 @@ namespace MiracSEBTask.Controllers
         [HttpPost]
         public ActionResult<RetrieveCustomerDto> CreateCustomer(CreateCustomerDto customerDto)
         {
+            if (!ValidateData.ValidateCreateCustomerDto(customerDto))
+            {
+                return BadRequest();    
+            }
             Customer customer = new Customer()
             {
                 Id = Guid.NewGuid(),
@@ -84,6 +89,10 @@ namespace MiracSEBTask.Controllers
             if (existingCustomer is null)
             {
                 return NotFound();
+            }
+            if (!ValidateData.ValidateUpdateCustomerDto(customerDto))
+            {
+                return BadRequest();
             }
             Customer updatedCustomer = new Customer()
             {
