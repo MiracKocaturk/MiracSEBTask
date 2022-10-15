@@ -80,8 +80,8 @@ namespace MiracSEBTask.Controllers
             });
         }
 
-        //PUT /customers/id
-        [HttpPut("id")]
+        //PUT /customers/{id}
+        [HttpPut("{id}")]
         public ActionResult UpdateCustomer (Guid id,UpdateCustomerDto customerDto)
         {
             var existingCustomer = customerRepository.GetCustomer(id);
@@ -106,7 +106,7 @@ namespace MiracSEBTask.Controllers
         }
 
         //DELETE /items/{id}
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public ActionResult DeleteCustomer (Guid id)
         {
             var existingCustomer = customerRepository.GetCustomer(id);
